@@ -1,5 +1,5 @@
 <% if node['td_agent']['includes'] %>
-include conf.d/*.conf 
+include conf.d/*.conf
 <% end %>
 <% if node['td_agent']['default_config'] %>
 ####
@@ -48,7 +48,7 @@ include conf.d/*.conf
 # @see http://docs.fluentd.org/articles/in_http
 <source>
   type http
-  port 8888
+  port <%= node['td_agent']['port'] %>
 </source>
 
 ## live debugging agent
